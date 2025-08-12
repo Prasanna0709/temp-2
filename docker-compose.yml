@@ -1,8 +1,8 @@
 services:
   my-fe:
     build: .
-    image: my-fe-app
-    container_name: My-frontend-container-1
+    image: MY-FE_APP:${BUILD_NUMBER}
+    container_name: My-frontend-container:${BUILD_NUMBER}
     ports:
       - "8085:80"
     restart: always

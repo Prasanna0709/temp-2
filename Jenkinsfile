@@ -17,6 +17,14 @@ pipeline{
             }
         }
 
+        stage ('Turn off old container'){
+            steps{
+                echo "Stopping the old containers ..."
+                sh 'docker container stop ${CONTAINER_NAME} || true'
+                echo "Old containers are stopped !"
+            }
+        }
+
         stage ('Removing old images'){
             steps{
                 echo "Removing the old images ..."
@@ -25,11 +33,11 @@ pipeline{
             }
         }
 
-        stage ('Turn off old container'){
+        stage ('Removing old containers'){
             steps{
-                echo "Stopping the old containers ..."
-                sh 'docker stop ${CONTAINER_NAME} || true'
-                echo "Old containers are stopped !"
+                echo "Removing old containers"
+                sh 'docker container rm ${CONTAINER_NAME}'
+                echo "Old containers removed"
             }
         }
 

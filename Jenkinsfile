@@ -36,7 +36,7 @@ pipeline{
         stage ('Removing old containers'){
             steps{
                 echo "Removing old containers"
-                sh 'docker container rm ${CONTAINER_NAME}'
+                sh 'docker container rm ${CONTAINER_NAME} || true'
                 echo "Old containers removed"
             }
         }

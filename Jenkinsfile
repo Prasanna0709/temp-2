@@ -4,7 +4,7 @@ pipeline{
 
     environment{
         IMAGE_NAME = "my-fe-app"
-        CONTANER_NAME = "My-frontend-conainer-1"
+        CONTAINER_NAME = "My-frontend-conainer-1"
     }
 
 

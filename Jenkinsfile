@@ -20,7 +20,7 @@ pipeline{
         stage ('Turn off old container'){
             steps{
                 echo "Stopping the old containers ..."
-                sh 'docker container stop ${CONTAINER_NAME}'
+                sh 'docker container stop ${CONTAINER_NAME} || true'
                 echo "Old containers are stopped !"
             }
         }

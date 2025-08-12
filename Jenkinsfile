@@ -4,7 +4,7 @@ pipeline{
 
     environment{
         IMAGE_NAME = "my-fe-app"
-        CONTAINER_NAME = "My-frontend-conainer-1"
+        CONTAINER_NAME = "My-frontend-container-1"
     }
 
 
@@ -20,7 +20,7 @@ pipeline{
         stage ('Turn off old container'){
             steps{
                 echo "Stopping the old containers ..."
-                sh 'docker container stop ${CONTAINER_NAME} || true'
+                sh 'docker container stop ${CONTAINER_NAME}'
                 echo "Old containers are stopped !"
             }
         }
